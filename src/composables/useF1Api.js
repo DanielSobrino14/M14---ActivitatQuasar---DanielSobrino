@@ -44,6 +44,7 @@ export function useF1Api() {
     }
   };
 
+  // Obtener detalles de las escuderias
   const fetchTeamDetails = async (constructorId) => {
     try {
       const response = await axios.get(`https://f1-api-7h7q.onrender.com/api/standings/constructors`);

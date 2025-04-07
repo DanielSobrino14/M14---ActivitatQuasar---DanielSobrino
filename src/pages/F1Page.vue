@@ -9,12 +9,7 @@
       <q-tab-panel name="drivers">
         <q-input v-model="busquedaPiloto" filled label="Buscar piloto" class="q-mb-md" />
 
-        <q-table
-          :rows="filteredDrivers"
-          :columns="driverColumns"
-          row-key="driverId"
-          flat bordered
-        >
+        <q-table :rows="filteredDrivers" :columns="driverColumns" row-key="driverId" flat bordered>
           <template v-slot:body-cell-image="props">
             <q-td :props="props">
               <q-avatar size="40px">
@@ -25,11 +20,7 @@
 
           <template v-slot:body-cell-actions="props">
             <q-td :props="props">
-              <q-btn
-                color="primary"
-                label="Ver Detalles"
-                @click="IrAlDetallePiloto(props.row.driverId)"
-              />
+              <q-btn color="primary" label="Ver Detalles" @click="IrAlDetallePiloto(props.row.driverId)" />
             </q-td>
           </template>
         </q-table>
@@ -38,19 +29,11 @@
       <q-tab-panel name="teams">
         <q-input v-model="busquedaEquipo" filled label="Buscar escudería" class="q-mb-md" />
 
-        <q-table
-          :rows="filteredTeams"
-          :columns="teamColumns"
-          row-key="constructorId"
-          flat bordered
-        >
+        <q-table :rows="filteredTeams" :columns="teamColumns" row-key="constructorId" flat bordered>
           <template v-slot:body-cell-actions="props">
             <q-td :props="props">
-              <q-btn
-                color="primary"
-                label="Ver Detalles"
-                @click="IrAlDetalleEquipo(props.row.Constructor.constructorId)"
-              />
+              <q-btn color="primary" label="Ver Detalles"
+                @click="IrAlDetalleEquipo(props.row.Constructor.constructorId)" />
             </q-td>
           </template>
         </q-table>
